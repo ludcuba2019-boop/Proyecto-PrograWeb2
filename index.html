@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BOA Reclamos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SECCIÓN DE MANUALES -->
+  <section class="manuales-descarga">
+    <h2>Manuales del sistema</h2>
+    <p>Desde aquí puedes descargar los documentos del proyecto.</p>
+
+    <a href="manuales/manual_usuario.pdf" download class="btn-manual">
+        Descargar Manual de Usuario
+    </a>
+
+    <a href="manuales/manual_tecnico.pdf" download class="btn-manual">
+        Descargar Manual Técnico
+    </a>
+  </section>
+
+  <!-- SECCIÓN PRINCIPAL DEL APP -->
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">BO</div>
+        <div>
+          <span class="eyebrow">BOA</span>
+          <strong>Operaciones</strong>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <button class="nav-link is-active" data-section="dashboard">Resumen</button>
+        <button class="nav-link" data-section="reclamos">Reclamos</button>
+        <button class="nav-link" data-section="clientes">Clientes y equipajes</button>
+        <button class="nav-link" data-section="vuelos">Vuelos</button>
+        <button class="nav-link" data-section="pilotos">Pilotos</button>
+        <button class="nav-link" data-section="asignaciones">Asignaciones</button>
+      </nav>
+
+      <div class="sidebar-card">
+        <span class="muted">Sesión</span>
+        <strong id="sidebarUser">Sin usuario</strong>
+        <button class="btn btn-light btn-block" id="btnLogout" type="button">Cerrar sesión</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="auth-view" id="authView">
+        <div class="auth-card">
+          <div class="auth-visual" aria-hidden="true">
+            <svg viewBox="0 0 460 260" role="img">
+              <path d="M32 179c89-26 153-48 273-100 26-11 65-19 89-3 17 12 10 32-15 37l-112 22-52 78-36 7 24-74-97 19-31 39-31 5 16-48-28-18z" fill="currentColor" opacity=".95"/>
+              <circle cx="82" cy="56" r="14" fill="currentColor" opacity=".2"/>
+              <circle cx="395" cy="207" r="24" fill="currentColor" opacity=".14"/>
+            </svg>
+          </div>
+          <div class="auth-content">
+            <span class="eyebrow">Sistema BOA</span>
+            <h1>Gestión de reclamos de equipaje</h1>
+            <p>Frontend independiente consumiendo servicios REST del backend Laravel 9.</p>
+
+            <form class="form" id="loginForm">
+              <label>
+                Usuario
+                <input id="loginUser" type="text" autocomplete="username" value="admin" required>
+              </label>
+              <label>
+                Contraseña
+                <input id="loginPassword" type="password" autocomplete="current-password" value="admin123" required>
+              </label>
+              <button class="btn btn-primary btn-block" type="submit">Ingresar</button>
+            </form>
+
+            <details class="register-box">
+              <summary>Registrar nuevo encargado</summary>
+              <form class="form" id="registerForm">
+                <label>
+                  Usuario nuevo
+                  <input id="registerUser" type="text" autocomplete="username" minlength="3" required>
+                </label>
+                <label>
+                  Contraseña
+                  <input id="registerPassword" type="password" autocomplete="new-password" minlength="6" required>
+                </label>
+                <button class="btn btn-secondary btn-block" type="submit">Crear usuario</button>
+              </form>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- resto de secciones de tu aplicación, tal cual estaban -->
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
